@@ -1,0 +1,43 @@
+{
+  "project": "隔离边界回归验证平台",
+  "entities": [
+    "boundary_policy",
+    "scenario",
+    "fixture_version",
+    "test_run",
+    "step_result",
+    "checkpoint",
+    "release_candidate",
+    "approval"
+  ],
+  "states": [
+    "draft",
+    "queued",
+    "leased",
+    "running",
+    "paused",
+    "failed",
+    "passed",
+    "blocked",
+    "released"
+  ],
+  "event_types": [
+    "policy.created",
+    "scenario.versioned",
+    "run.queued",
+    "run.leased",
+    "step.recorded",
+    "checkpoint.saved",
+    "run.completed",
+    "candidate.released"
+  ],
+  "time_policy": "ISO 8601 with timezone",
+  "identifier_policy": "同一租户和对象类型内业务标识唯一",
+  "version_policy": "已发布规则与事实通过新版本追加，不覆盖历史",
+  "rules": [
+    "每次运行必须绑定冻结的策略、场景与夹具版本",
+    "相同输入和时钟下结果摘要必须一致",
+    "执行租约过期后恢复不得重复累计步骤",
+    "发布必须同时满足必过场景、预算和例外审批"
+  ]
+}

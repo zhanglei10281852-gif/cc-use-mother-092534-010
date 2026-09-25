@@ -1,0 +1,44 @@
+[
+  {
+    "event_id": "evt-10-001",
+    "event_type": "policy.created",
+    "aggregate_id": "case-10-001",
+    "occurred_at": "2026-09-25T09:00:00+08:00",
+    "actor_id": "operator-01"
+  },
+  {
+    "event_id": "evt-10-002",
+    "event_type": "scenario.versioned",
+    "aggregate_id": "case-10-001",
+    "occurred_at": "2026-09-25T10:00:00+08:00",
+    "actor_id": "reviewer-02"
+  },
+  {
+    "event_id": "evt-10-003",
+    "event_type": "run.queued",
+    "aggregate_id": "case-10-001",
+    "occurred_at": "2026-09-25T11:00:00+08:00",
+    "actor_id": "operator-01"
+  },
+  {
+    "event_id": "evt-10-004",
+    "event_type": "run.leased",
+    "aggregate_id": "case-10-001",
+    "occurred_at": "2026-09-25T12:00:00+08:00",
+    "actor_id": "reviewer-02"
+  },
+  {
+    "event_id": "evt-10-005",
+    "event_type": "step.recorded",
+    "aggregate_id": "case-10-001",
+    "occurred_at": "2026-09-25T13:00:00+08:00",
+    "actor_id": "operator-01"
+  },
+  {
+    "event_id": "evt-10-006",
+    "event_type": "checkpoint.saved",
+    "aggregate_id": "case-10-001",
+    "occurred_at": "2026-09-25T14:00:00+08:00",
+    "actor_id": "reviewer-02"
+  }
+]
