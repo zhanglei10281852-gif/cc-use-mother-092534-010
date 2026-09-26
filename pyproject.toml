@@ -1,7 +1,7 @@
 [project]
 name = "ccusr-boundary-lab"
 version = "0.1.0"
-description = "隔离策略模型、攻击场景、确定性运行、差异裁决和发布门禁的领域资料"
+description = "隔离边界回归验证平台：版本化策略、攻击链场景、确定性运行、差异裁决与发布门禁"
 requires-python = ">=3.11"
 dependencies = []
 
