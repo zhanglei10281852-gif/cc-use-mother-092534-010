@@ -1,0 +1,11 @@
+{
+  "scenario_id": "residue",
+  "kind": "cross_task_residue",
+  "description": "跨任务残留：非持久化目录必须清理，持久化目录按策略可见",
+  "steps": [
+    {"action": "read_residue", "path": "/tmp/leftover/payload.bin", "expect": "deny"},
+    {"action": "read_residue", "path": "/var/persist/cache/last.txt", "expect": "allow"},
+    {"action": "write_file", "path": "/var/persist/cache/new.txt", "content": "本次任务缓存", "expect": "allow"},
+    {"action": "read_file", "path": "/tmp/leftover/payload.bin", "expect": "deny"}
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "policy_id": "vm-isolation",
+  "file_visibility": {
+    "default": "deny",
+    "rules": [
+      {"effect": "deny", "pattern": "/etc/**", "reason": "SYSTEM_CONFIG_DENIED"},
+      {"effect": "deny", "pattern": "/mnt/**", "reason": "MOUNT_DENIED"},
+      {"effect": "allow", "pattern": "/workspace/**", "reason": "WORKSPACE_ALLOWED"},
+      {"effect": "allow", "pattern": "/var/persist/**", "reason": "PERSIST_ALLOWED"}
+    ]
+  },
+  "network_egress": {
+    "default": "deny",
+    "rules": [
+      {"effect": "allow", "host": "api.internal", "port": 443, "reason": "INTERNAL_API"}
+    ]
+  },
+  "tool_capabilities": ["read_file", "write_file", "list_dir", "extract_archive", "net_connect"],
+  "persistence_dirs": ["/var/persist/**"]
+}

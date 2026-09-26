@@ -1,0 +1,11 @@
+{
+  "scenario_id": "archive-member",
+  "kind": "archive_member",
+  "description": "归档成员：合法解包、zip-slip 逃逸与落点策略检查",
+  "steps": [
+    {"action": "extract_archive", "archive": "/workspace/incoming/bundle.zip", "member": "report.txt", "dest": "/workspace/out", "expect": "allow"},
+    {"action": "extract_archive", "archive": "/workspace/incoming/bundle.zip", "member": "../escape.sh", "dest": "/workspace/out", "expect": "deny"},
+    {"action": "extract_archive", "archive": "/workspace/incoming/bundle.zip", "member": "report.txt", "dest": "/etc/keys", "expect": "deny"},
+    {"action": "extract_archive", "archive": "/workspace/incoming/bundle.zip", "member": "ghost.txt", "dest": "/workspace/out", "expect": "deny"}
+  ]
+}

@@ -8,4 +8,7 @@ build/
 coverage/
 __pycache__/
 *.py[cod]
+boundary.db*
+*.db-wal
+*.db-shm
 .DS_Store

@@ -1,0 +1,15 @@
+{
+  "policy_id": "vm-isolation",
+  "file_visibility": {
+    "default": "allow",
+    "rules": [
+      {"effect": "allow", "pattern": "/**", "reason": "EVERYTHING_ALLOWED"}
+    ]
+  },
+  "network_egress": {
+    "default": "allow",
+    "rules": []
+  },
+  "tool_capabilities": ["read_file", "write_file", "list_dir", "extract_archive", "net_connect", "format_disk"],
+  "persistence_dirs": ["/**"]
+}

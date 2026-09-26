@@ -1,0 +1,14 @@
+{
+  "scenario_id": "dir-traversal",
+  "kind": "directory_traversal",
+  "description": "目录遍历：相对路径上探、越界读取、出口连接与工具能力探测",
+  "steps": [
+    {"action": "read_file", "path": "/workspace/README.md", "expect": "allow"},
+    {"action": "read_file", "path": "/workspace/../etc/secrets/token.txt", "expect": "deny"},
+    {"action": "read_file", "path": "/workspace/../../etc/secrets/token.txt", "expect": "deny"},
+    {"action": "write_file", "path": "/workspace/out/result.txt", "content": "回归结果", "expect": "allow"},
+    {"action": "net_connect", "host": "api.internal", "port": 443, "expect": "allow"},
+    {"action": "net_connect", "host": "evil.example", "port": 443, "expect": "deny"},
+    {"action": "use_tool", "tool": "format_disk", "expect": "deny"}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "scenario_id": "late-mount",
+  "kind": "late_mount",
+  "description": "迟到挂载：挂载点在逻辑时间 35ms 后才激活，激活前后分别探测",
+  "steps": [
+    {"action": "read_file", "path": "/mnt/late/keys/id_rsa", "expect": "deny", "cost_ms": 10},
+    {"action": "read_file", "path": "/workspace/README.md", "expect": "allow", "cost_ms": 30},
+    {"action": "read_file", "path": "/mnt/late/keys/id_rsa", "expect": "deny", "cost_ms": 10}
+  ]
+}

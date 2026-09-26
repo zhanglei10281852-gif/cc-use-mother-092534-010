@@ -1,0 +1,10 @@
+{
+  "scenario_id": "link-jump",
+  "kind": "link_jump",
+  "description": "链接跳转：符号链接逃逸到受保护目录",
+  "steps": [
+    {"action": "follow_link", "path": "/workspace/docs/shortcut", "expect": "deny"},
+    {"action": "read_file", "path": "/workspace/docs/guide.md", "expect": "allow"},
+    {"action": "follow_link", "path": "/workspace/README.md", "expect": "deny"}
+  ]
+}
